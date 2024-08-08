@@ -10,5 +10,7 @@ data class WeatherItem(
     val seaLevel: Int,
     val temp: Double,
     val tempMax: Double,
-    val tempMin: Double
+    val tempMin: Double,
+    val icon: String,
+    val description:String
 ): java.io.Serializable

@@ -1,24 +1,19 @@
 package com.example.myapp
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapp.model.WeatherData
-import com.example.myapp.model.WeatherItem
-import com.squareup.picasso.Picasso
 
 class WeatherAdapter(private val weatherItems: WeatherData) : RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
 
-    private lateinit var mListener:onItemClickListener
+    private lateinit var mListener: onItemClickListener
 
     interface onItemClickListener{
-        fun onItemClick(position:Int,listWeather:WeatherData)
+        fun onItemClick(position:Int,listWeather: WeatherData)
     }
     fun onItemClickListener(listener: onItemClickListener){
         mListener=listener

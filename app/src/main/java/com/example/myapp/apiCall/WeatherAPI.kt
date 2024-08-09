@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.myapp.apiCall
 
 import com.example.myapp.model.Example
 import retrofit2.http.GET

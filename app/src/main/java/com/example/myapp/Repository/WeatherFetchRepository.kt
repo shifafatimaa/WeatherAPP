@@ -3,7 +3,7 @@ package com.example.myapp.Repository
 import android.net.http.HttpException
 import android.os.Build
 import androidx.annotation.RequiresExtension
-import com.example.myapp.RetrofitHelper
+import com.example.myapp.apiCall.RetrofitHelper
 import com.example.myapp.model.WeatherData
 import com.example.myapp.model.WeatherItem
 import kotlinx.coroutines.Dispatchers
@@ -34,7 +34,6 @@ class WeatherFetchRepository {
                 }
                 WeatherData(weatherItems)
             } catch (e: IOException) {
-                // Handle network errors
                 throw e
             } catch (e: HttpException) {
                 // Handle HTTP errors

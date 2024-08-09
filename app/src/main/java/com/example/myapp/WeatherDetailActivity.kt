@@ -1,21 +1,20 @@
 package com.example.myapp
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapp.apiCall.WeatherResult
 import com.example.myapp.model.WeatherData
-import com.example.myapp.model.WeatherItem
 import com.example.myapp.viewModels.WeatherDetailViewModel
 
 //class WeatherDetailActivity : AppCompatActivity() {
@@ -70,21 +69,43 @@ class WeatherDetailActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        weatherDetailViewModel.weatherSharedInfo.observe(this){weather ->
-            weather?.let{
-                adapter = WeatherAdapter(weather)
-                recyclerView.adapter = adapter
-                recyclerView.visibility = View.VISIBLE
-                adapter.onItemClickListener(object : WeatherAdapter.onItemClickListener{
-
-
-                    override fun onItemClick(position: Int, listWeather: WeatherData) {
-                        val intent = Intent(this@WeatherDetailActivity, ItemShowActivity::class.java)
-                        intent.putExtra("Weather",weather.weatherlist[position])
-                        startActivity(intent)
+        weatherDetailViewModel.weatherSharedInfo.observe(this){
+            when(it){
+                is WeatherResult.Success-> {
+                    it.data?.let {
+                        adapter = WeatherAdapter(it)
+                        recyclerView.adapter = adapter
+                        recyclerView.visibility = View.VISIBLE
+                        adapter.onItemClickListener(object : WeatherAdapter.onItemClickListener {
+                            override fun onItemClick(position: Int, listWeather: WeatherData) {
+                                val intent =
+                                    Intent(this@WeatherDetailActivity, ItemShowActivity::class.java)
+                                intent.putExtra("Weather", listWeather.weatherlist[position])
+                                startActivity(intent)
+                            }
+                        })
                     }
-                })
+                }
+                is WeatherResult.Error -> {
+                    Toast.makeText(this,it.error, Toast.LENGTH_SHORT).show()
+                    finish()
+                    //jo pichli activity huti usko call krdeta finish()
+
+
+                }
             }
+//            weather?.let{
+//                adapter = WeatherAdapter(weather)
+//                recyclerView.adapter = adapter
+//                recyclerView.visibility = View.VISIBLE
+//                adapter.onItemClickListener(object : WeatherAdapter.onItemClickListener{
+//                    override fun onItemClick(position: Int, listWeather: WeatherData) {
+//                        val intent = Intent(this@WeatherDetailActivity, ItemShowActivity::class.java)
+//                        intent.putExtra("Weather",listWeather.weatherlist[position])
+//                        startActivity(intent)
+//                    }
+//                })
+//            }
 
         }
 

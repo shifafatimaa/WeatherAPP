@@ -1,10 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemShowActivity">
+    android:background="@color/Blue"
+    android:padding="16dp">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Blue"
+        android:elevation="4dp"
+        app:title="Back"
+        app:titleTextColor="@color/white"
+
+        app:popupTheme="@style/CustomToolbarTheme"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/cityName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="City Name"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        android:text="Date 22"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/cityName1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/weatherIcon1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="Weather Icon"
+        android:outlineSpotShadowColor="@color/white"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityName1" />
+
+    <TextView
+        android:id="@+id/weatherDescription1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="weather description"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/weatherIcon1"
+        app:layout_constraintStart_toStartOf="@+id/weatherIcon1"
+        app:layout_constraintEnd_toEndOf="@+id/weatherIcon1"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <!-- Temperature on the Right -->
+
+
+    <!-- Humidity -->
+
+    <!-- Feels Like Below Temperature -->
+
+    <!-- Max and Min Temperature on One Line -->
+
+    <TextView
+        android:id="@+id/temp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26 c"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherDescription1"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <TextView
+        android:id="@+id/humidity1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="89%"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp1" />
+
+    <TextView
+        android:id="@+id/feelsLike1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="feels like 32c"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toEndOf="@+id/humidity1"
+        app:layout_constraintTop_toBottomOf="@+id/temp1" />
+
+    <TextView
+        android:id="@+id/tempMax1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Temp max 25 c"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidity1" />
+
+    <TextView
+        android:id="@+id/tempMin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Temp max 25 c"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempMax1" />
+
+    <TextView
+        android:id="@+id/seaLevel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Sea level"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempMin1" />
+
+    <TextView
+        android:id="@+id/groundLevel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Ground level"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seaLevel1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    app:cardBackgroundColor="#87CEEB"-->
+<!--    android:id="@+id/main_card">-->
+
+<!--    <LinearLayout-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="16dp">-->
+
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/weatherIcon"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="25dp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:contentDescription="Weather Icon"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/weatherDescription"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold" />-->
+
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/cityName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/feelsLike"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/groundLevel"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/humidity"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/seaLevel"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/temp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tempMax"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tempMin"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/button2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Go Back"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="24dp"/>-->
+<!--    </LinearLayout>-->
+<!--</androidx.cardview.widget.CardView>-->

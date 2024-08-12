@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom Theme for Toolbar -->
+    <!-- In your styles.xml -->
+    <style name="CustomToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="subtitleTextColor">@android:color/white</item>
+    </style>
+
+</resources>

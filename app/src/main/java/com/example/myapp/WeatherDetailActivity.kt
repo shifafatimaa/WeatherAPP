@@ -103,13 +103,16 @@
 //}
 package com.example.myapp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresExtension
 import androidx.appcompat.app.AppCompatActivity
@@ -128,12 +131,18 @@ class WeatherDetailActivity : AppCompatActivity() {
     private lateinit var weatherDetailViewModel: WeatherDetailViewModel
     private lateinit var   recyclerView: RecyclerView
 
+    @SuppressLint("MissingInflatedId")
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("City", "weatherdetailactivity")
         enableEdgeToEdge()
         setContentView(R.layout.activity_weather_detail)
+
+
+
+
+
         Log.d("City", "weatherdetailactivi")
 
         val sharedPreferences = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
@@ -211,6 +220,7 @@ class WeatherDetailActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
+
 }
 
 

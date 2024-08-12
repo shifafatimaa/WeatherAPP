@@ -30,6 +30,7 @@ class WeatherAdapter(private val weatherItems: WeatherData) : RecyclerView.Adapt
     class WeatherViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tempTextView: TextView = itemView.findViewById(R.id.temp)
         val tempMaxTextView: TextView = itemView.findViewById(R.id.tempMax)
+        val tempMinTextView: TextView = itemView.findViewById(R.id.tempMin)
 
         val imageview: ImageView = itemView.findViewById(R.id.weatherIcon)
         val weatherDescription: TextView = itemView.findViewById(R.id.weatherDescription)
@@ -51,8 +52,10 @@ class WeatherAdapter(private val weatherItems: WeatherData) : RecyclerView.Adapt
         val item = weatherItems.weatherlist[position]
         holder.weatherDescription.text = "${item.description}"
         holder.tempTextView.text = "${item.temp}°C"
+        holder.tempMinTextView.text = "${item.tempMin}°C"
         holder.tempMaxTextView.text = "/${item.tempMax}°C"
         holder.weatherDate.text = "${convertToCustomDateFormat(item.date)}"
+
         Log.d("Date", item.date)
 
 

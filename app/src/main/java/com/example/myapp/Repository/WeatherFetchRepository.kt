@@ -38,7 +38,7 @@ class WeatherFetchRepository {
                         tempMax = data.main.temp_max.toInt(),
                         tempMin = data.main.temp_min.toInt(),
                         icon = weather.icon,
-                        description = weather.description,
+                        description = weather.description.substring(0, 1).uppercase() + weather.description.substring(1).lowercase(),
                         date = data.dt_txt
                     )
                 }

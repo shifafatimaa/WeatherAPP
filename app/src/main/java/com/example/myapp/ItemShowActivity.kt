@@ -1,11 +1,13 @@
 package com.example.myapp
 
 import android.annotation.SuppressLint
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -23,8 +25,11 @@ import java.util.Locale
 
 class ItemShowActivity : AppCompatActivity() {
     private val itemShowViewModel: ItemShowViewModel by  viewModels()
+
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_item_show)
@@ -50,7 +55,6 @@ class ItemShowActivity : AppCompatActivity() {
             it.setHomeAsUpIndicator(R.drawable.back_arrow)
         }
 
-
         itemShowViewModel.getDetails(intent)
         itemShowViewModel.itemSharedInfo.observe(this){
             weatherItem -> weatherItem?.let{
@@ -71,11 +75,6 @@ class ItemShowActivity : AppCompatActivity() {
             date.text="${convertToCustomDateFormat(weatherItem.date)}"
             Log.d("ItemShowActivity", "Icon URL: $iconUrl")
         }
-//            button.setOnClickListener{
-//                finish()
-//            }
-
-
         }
     }
     fun convertToCustomDateFormat(dateString: String): String {
@@ -91,4 +90,5 @@ class ItemShowActivity : AppCompatActivity() {
         onBackPressed()
         return true
     }
+
 }

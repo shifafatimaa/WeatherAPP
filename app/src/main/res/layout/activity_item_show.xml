@@ -27,7 +27,7 @@
         android:layout_marginTop="128dp"
         android:text="City Name"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
@@ -42,7 +42,7 @@
         android:layout_marginEnd="16dp"
         android:text="Date 22"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cityName1"
@@ -66,21 +66,13 @@
         android:layout_height="wrap_content"
         android:text="weather description"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/weatherIcon1"
         app:layout_constraintStart_toStartOf="@+id/weatherIcon1"
         app:layout_constraintEnd_toEndOf="@+id/weatherIcon1"
         app:layout_constraintHorizontal_bias="0.5"/>
 
-    <!-- Temperature on the Right -->
-
-
-    <!-- Humidity -->
-
-    <!-- Feels Like Below Temperature -->
-
-    <!-- Max and Min Temperature on One Line -->
 
     <TextView
         android:id="@+id/temp1"
@@ -103,7 +95,7 @@
         android:layout_marginTop="36dp"
         android:text="89%"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +108,7 @@
         android:layout_marginTop="36dp"
         android:text="feels like 32c"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.641"
         app:layout_constraintStart_toEndOf="@+id/humidity1"
@@ -129,7 +121,7 @@
         android:layout_marginTop="35dp"
         android:text="Temp max 25 c"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/humidity1" />
@@ -141,7 +133,7 @@
         android:layout_marginTop="30dp"
         android:text="Temp max 25 c"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempMax1" />
@@ -153,7 +145,7 @@
         android:layout_marginTop="30dp"
         android:text="Sea level"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempMin1" />
@@ -165,7 +157,7 @@
         android:layout_marginTop="30dp"
         android:text="Ground level"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seaLevel1" />

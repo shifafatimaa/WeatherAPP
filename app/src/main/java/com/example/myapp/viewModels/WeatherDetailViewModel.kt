@@ -26,11 +26,10 @@ class WeatherDetailViewModel : ViewModel(){
     private val repository = WeatherFetchRepository()
 
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
-    fun getData(city:String, apiKey:String){
+    fun getData(city:String){
         GlobalScope.launch{
             try {
-                Log.d("d","this is")
-                val weatherData=repository.fetchWeather(city,apiKey)
+                val weatherData=repository.fetchWeather(city)
 
                 if (weatherData != null) {
                     weatherInfo.postValue(WeatherResult.Success(weatherData))
@@ -39,13 +38,12 @@ class WeatherDetailViewModel : ViewModel(){
             catch (e:Exception){
                 weatherInfo.postValue(WeatherResult.Error(e.message.toString()))
             }
-
-
-
-
-
         }
     }
+//    fun storeInCache(weatherDataList:WeatherData){
+//        Log.d("shifa", "storeInCache called")
+//        repository.storeData(weatherDataList)
+//    }
 
 
 

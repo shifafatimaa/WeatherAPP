@@ -33,7 +33,6 @@ class ItemShowActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_item_show)
-
         val cityNameTextView: TextView = findViewById(R.id.cityName1)
         val feelsLikeTextView: TextView = findViewById(R.id.feelsLike1)
         val groundLevelTextView: TextView = findViewById(R.id.groundLevel1)
